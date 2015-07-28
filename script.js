@@ -3,7 +3,7 @@ var planets = ["mercury", "venus", "earth", "mars", "jupiter", "saturn", "uranus
 // Use the forEach method to add the name of each planet to a <div> element in your HTML
 function domAdder (element, index, array) {
   $("#content").append("<div>" + element + "</div>");
-  if(index === array.length -1) {
+  if(index === array.length - 1) {
     $("#content").append("<hr>");
   }
 };
@@ -32,3 +32,13 @@ ePlanets.forEach(domAdder);
 
 // Use the reduce method to create a sentence from the words in the following array
 var words = ["The", "early", "bird", "might", "get", "the", "worm", "but", "the", "second", "mouse", "gets", "the", "cheese"];
+
+function sentenceMaker(previousValue, currentValue, index, array) {
+  if(index === array.length - 1) {
+    currentValue += ".";
+  }
+  return previousValue + " " + currentValue;
+}
+
+var theSentence = words.reduce(sentenceMaker);
+$("#content").append(theSentence);
