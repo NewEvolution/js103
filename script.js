@@ -34,6 +34,9 @@ ePlanets.forEach(domAdder);
 var words = ["The", "early", "bird", "might", "get", "the", "worm", "but", "the", "second", "mouse", "gets", "the", "cheese"];
 
 function sentenceMaker(previousValue, currentValue, index, array) {
+  if(index === 1) {
+    previousValue = capMaker(previousValue);
+  }
   if(index === array.length - 1) {
     currentValue += ".";
   }
